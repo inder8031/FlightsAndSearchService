@@ -1,5 +1,5 @@
 {
-  "name": "flightsandsearch",
+  "name": "flightsandsearchservice",
   "version": "1.0.0",
   "description": "Micro Services for handling flight CRUD.",
   "main": "index.js",
@@ -16,5 +16,6 @@
     "nodemon": "^3.1.4",
     "sequelize": "^6.37.3",
     "sequelize-cli": "^6.6.2"
-  }
+  },
+  "devDependencies": {}
 }
