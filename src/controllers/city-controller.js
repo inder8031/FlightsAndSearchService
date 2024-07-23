@@ -81,3 +81,10 @@ const destroy = async (req, res) => {
         });
     }
 }
+
+module.exports = {
+    create,
+    get,
+    update,
+    destroy 
+};
