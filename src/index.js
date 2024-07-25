@@ -23,32 +23,7 @@ const setupAndStartServer = async () => {
             console.log('All models were synchronized successfully.');
         }
 
-        // const city = await City.findOne({
-        //     where: {
-        //         id: 11
-        //     }
-        // });
-        // console.log(city);
-
-        // const airports = await city.getAirports();
-        // console.log(airports);
-
-        // const airports = await Airport.findAll({
-        //     include: [{
-        //         model: City
-        //     }]
-        // });
-
-        // console.log(airports);
-
-        const airports = await City.findOne({
-            where: {
-                id: 11
-            },
-            include: Airport
-        });
-
-        console.log(airports.Airports[0].name);
+        
     });
 };
 
