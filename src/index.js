@@ -2,7 +2,7 @@ const express = require("express");
 const { PORT } = require("./config/serverConfig.js");
 const bodyParser = require("body-parser");
  
-// const { Airport, City } = require("./models/index");
+const { Airport, City } = require("./models/index");
 const db = require("./models/index");
 
 const v1ApiRouter = require("./routes/index");
@@ -32,6 +32,23 @@ const setupAndStartServer = async () => {
 
         // const airports = await city.getAirports();
         // console.log(airports);
+
+        // const airports = await Airport.findAll({
+        //     include: [{
+        //         model: City
+        //     }]
+        // });
+
+        // console.log(airports);
+
+        const airports = await City.findOne({
+            where: {
+                id: 11
+            },
+            include: Airport
+        });
+
+        console.log(airports.Airports[0].name);
     });
 };
 
