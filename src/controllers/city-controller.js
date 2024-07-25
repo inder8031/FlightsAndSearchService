@@ -102,10 +102,52 @@ const getAll = async (req, res) => {
     }
 }
 
+const createAll = async (req, res) => {
+    try {
+        const cities = await cityService.createAllCities(req.body);
+        return res.status(200).json({
+            data: cities,
+            success: true,
+            message: "Successfully created all cities",
+            err: {}
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            data: {},
+            success: false,
+            message: "cities not created",
+            err: error
+        });
+    }
+}
+
+const getAllCityAirports = async (req, res) => {
+    try {
+        const cityAirports = await cityService.getAllCityAirports(req.params.id);
+        return res.status(200).json({
+            data: cityAirports,
+            success: true,
+            message: "Successfully fetched all airports of a city",
+            err: {}
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            data: {},
+            success: false,
+            message: "airports of a city not fetched",
+            err: error
+        });
+    }
+}
+
 module.exports = {
     create,
     get,
     update,
     destroy,
-    getAll 
+    getAll,
+    createAll,
+    getAllCityAirports 
 };
