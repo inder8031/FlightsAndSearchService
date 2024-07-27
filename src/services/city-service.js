@@ -55,7 +55,7 @@ class CityService {
         }
     } 
 
-    async createAllCities({ list }) {
+    async createAllCities(list) {
         try {
             const cities = await this.cityRepository.createAllCities(list);
             return cities;
