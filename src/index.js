@@ -23,11 +23,11 @@ const setupAndStartServer = async () => {
             console.log('All models were synchronized successfully.');
         }
 
-        const airplane = await Airplane.create({
-            modelNumber: "Cessna 172"
-        });
+        // const airplane = await Airplane.create({
+        //     modelNumber: "Cessna 172"
+        // });
 
-        console.log(airplane);
+        // console.log(airplane);
     });
 };
 
