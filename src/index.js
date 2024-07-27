@@ -2,7 +2,7 @@ const express = require("express");
 const { PORT } = require("./config/serverConfig.js");
 const bodyParser = require("body-parser");
  
-const { Airport, City } = require("./models/index");
+const { Airplane } = require("./models/index");
 const db = require("./models/index");
 
 const v1ApiRouter = require("./routes/index");
@@ -23,7 +23,11 @@ const setupAndStartServer = async () => {
             console.log('All models were synchronized successfully.');
         }
 
-        
+        const airplane = await Airplane.create({
+            modelNumber: "Cessna 172"
+        });
+
+        console.log(airplane);
     });
 };
 
