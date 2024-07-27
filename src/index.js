@@ -22,12 +22,6 @@ const setupAndStartServer = async () => {
             await db.sequelize.sync({ alter: true});
             console.log('All models were synchronized successfully.');
         }
-
-        // const airplane = await Airplane.create({
-        //     modelNumber: "Cessna 172"
-        // });
-
-        // console.log(airplane);
     });
 };
 
